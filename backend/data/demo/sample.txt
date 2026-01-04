@@ -1,0 +1,2 @@
+This is a sample handwritten text for demonstration purposes.
+The Smart Handwritten Data Recognition system can convert this text to digital format.

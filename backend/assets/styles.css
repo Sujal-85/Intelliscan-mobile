@@ -1,0 +1,199 @@
+/* Custom CSS for Smart Handwritten Data Recognition */
+:root {
+    --primary-color: #6a0dad;
+    /* Deep Purple */
+    --primary-gradient: linear-gradient(135deg, #6a0dad, #9370db);
+    --secondary-color: #ff8c00;
+    /* Dark Orange */
+    --secondary-gradient: linear-gradient(135deg, #ff8c00, #ffa500);
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #2c3e50;
+    --light-gray: #e9ecef;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    padding: 1.5rem !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.2);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+/* Button styling */
+.stButton>button {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-shadow: 0 4px 6px rgba(106, 13, 173, 0.2);
+    width: 100%;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 7px 14px rgba(106, 13, 173, 0.3) !important;
+    background: linear-gradient(135deg, #7b1fa2, #ab47bc) !important;
+}
+
+.stButton>button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(106, 13, 173, 0.2) !important;
+}
+
+/* Tab styling */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 0px;
+    gap: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background-color: transparent;
+    border: none;
+    color: #6c757d;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
+    transition: color 0.2s;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: var(--primary-color);
+    background-color: rgba(106, 13, 173, 0.05);
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--primary-color) !important;
+    background-color: white !important;
+    border-bottom: 3px solid var(--primary-color) !important;
+}
+
+/* Card/Container styling */
+div[data-testid="stVerticalBlock"]>div[data-testid="stVerticalBlock"] {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* File Uploader */
+section[data-testid="stFileUploader"] {
+    background-color: #f8f9fa;
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: border-color 0.3s;
+}
+
+section[data-testid="stFileUploader"]:hover {
+    border-color: var(--primary-color);
+}
+
+/* Inputs */
+.stTextInput input,
+.stTextArea textarea {
+    border: 1px solid #ced4da !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    transition: border-color 0.2s;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(106, 13, 173, 0.2) !important;
+}
+
+/* Status Messages */
+.stSuccess,
+.stInfo,
+.stWarning,
+.stError {
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    border: none !important;
+}
+
+.stSuccess {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+    border-left: 5px solid #28a745 !important;
+}
+
+.stError {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border-left: 5px solid #dc3545 !important;
+}
+
+.stInfo {
+    background-color: #d1ecf1 !important;
+    color: #0c5460 !important;
+    border-left: 5px solid #17a2b8 !important;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: white;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    margin-top: 60px;
+}
+
+/* Hide Sidebar Scrollbar */
+section[data-testid="stSidebar"] ::-webkit-scrollbar {
+    display: none;
+}
+
+section[data-testid="stSidebar"] {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Force sidebar content down if needed by standard streamlit layout adjustments */
+div[data-testid="stSidebarUserContent"] {
+    padding-top: 1rem;
+    /* Reduced from 2rem */
+}
+
+/* Compact Radio Buttons in Sidebar */
+section[data-testid="stSidebar"] .stRadio>label {
+    padding-bottom: 2px !important;
+    padding-top: 2px !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"]>label {
+    margin-bottom: 0px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+/* Images */
+img {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
